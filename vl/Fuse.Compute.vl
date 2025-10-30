@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="MmjJmOJpSi5MQ4PE76v2SF" LanguageVersion="2025.7.0" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="MmjJmOJpSi5MQ4PE76v2SF" LanguageVersion="2025.7.1-0013-g8fcece0df9" Version="0.128">
   <NugetDependency Id="BguWkaXEMADMOCpL1jti9a" Location="VL.CoreLib" Version="2025.7.0" />
   <Patch Id="ALpqjXEf369Pnuk64gmWrV">
     <Canvas Id="V8HBoVZNCZmPvIQ0NbkFQ5" DefaultCategory="Fuse.Compute" CanvasType="FullCategory">
@@ -3182,9 +3182,11 @@
                 <Pin Id="GqBVdHXi8dOPCgQ1aZ80AP" Name="Mesh" Kind="InputPin" />
                 <Pin Id="MRQwvSd8Bw5NjbGvL6Trdi" Name="Instance Count" Kind="InputPin" />
                 <Pin Id="JmC2Lj1nNnxPjwpgqTTCk8" Name="Profiling Name" Kind="InputPin" />
+                <Pin Id="HP0hmD3M1oTQESpRN7BMZf" Name="Stream Out Targets" Kind="InputPin" IsHidden="true" />
                 <Pin Id="DLY9eeQzRu5Pf8ChTMYex8" Name="Topology" Kind="InputPin" />
                 <Pin Id="KpCgksRGqRdQHiYSC2bJfW" Name="Draw Count" Kind="InputPin" />
                 <Pin Id="RILVumy1uw5ObpAZDCBKzP" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="CTCF97FLlqsMRi53a25zLV" Name="Stream Out Targets Pass Thru" Kind="OutputPin" IsHidden="true" />
               </Node>
               <Node Bounds="894,1128,165,19" Id="UwVXaAf2vmaOsWdxmjdBm1">
                 <p:NodeReference LastCategoryFullName="Stride.Rendering" LastDependency="VL.Stride.Runtime.vl">
@@ -4556,17 +4558,17 @@
                 <Patch Id="RmqCnP6cFz0L3SfBNdL1Ux" ManuallySortedPins="true">
                   <Patch Id="ASSyTe470shLURoFQxMvaY" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="DIlMWw15PxkOVjxjUMRK8K" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="1084,1000,92,26" Id="JoYzGbbYVWSLAmjC9Dpnbv">
-                    <p:NodeReference LastCategoryFullName="VL.Stride.Rendering.MeshDrawIndirect" LastDependency="Fuse.Core.vl">
+                  <Node Bounds="1096,1000,92,26" Id="JoYzGbbYVWSLAmjC9Dpnbv">
+                    <p:NodeReference LastCategoryFullName="Stride.API.Rendering.MeshDraw" LastDependency="VL.Stride.Runtime.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="MeshDrawIndirect" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="MeshDraw" NeedsToBeDirectParent="true" />
                       <Choice Kind="OperationCallFlag" Name="SetVertexBuffers" />
                     </p:NodeReference>
                     <Pin Id="K2uw7rnZgC8O6csvmHi2I6" Name="Input" Kind="StateInputPin" />
                     <Pin Id="MkeByEYfGuFQP3xYFA2pXQ" Name="Value" Kind="InputPin" />
                     <Pin Id="BaXfkazAmyqQICqYnzaJ0O" Name="Output" Kind="StateOutputPin" />
                   </Node>
-                  <Node Bounds="1171,953,64,26" Id="F4J5riRJFzTPMvoygmQyig">
+                  <Node Bounds="1183,950,64,26" Id="F4J5riRJFzTPMvoygmQyig">
                     <p:NodeReference LastCategoryFullName="Collections.Mutable.MutableArray" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToArray" />
@@ -4575,7 +4577,7 @@
                     <Pin Id="GQkvpMfDb9BOcT5l5SlyuR" Name="Input" Kind="InputPin" />
                     <Pin Id="L3hmECGkMZIL23yR9i02lU" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="1171,913,88,26" Id="G7AR57XPKwsNNVSg6nNQiA">
+                  <Node Bounds="1183,910,88,26" Id="G7AR57XPKwsNNVSg6nNQiA">
                     <p:NodeReference LastCategoryFullName="Stride.Graphics.VertexBufferBinding" LastDependency="Stride.Graphics.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="VertexBufferBinding" />
@@ -4647,7 +4649,7 @@
                     </p:NodeReference>
                     <Pin Id="RBoNNTL3N4kLiNB4fZl6r4" Name="Output" Kind="StateOutputPin" />
                   </Node>
-                  <Node Bounds="1072,1099,212,466" Id="Gx5g0FOS3sPQbl9aDACe9d">
+                  <Node Bounds="1072,1095,218,470" Id="Gx5g0FOS3sPQbl9aDACe9d">
                     <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ApplicationStatefulRegion" Name="If" />
@@ -4657,17 +4659,17 @@
                     <Patch Id="EgEtOzJ3dN3LYBHRpowftd" ManuallySortedPins="true">
                       <Patch Id="D3xvYABNo3oQOY7AkEyi5M" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="LU3drY3hsQPPOtB3c21K6U" Name="Then" ManuallySortedPins="true" />
-                      <Node Bounds="1084,1366,92,26" Id="CgoDLq13VWEPT3Zysd7q7m">
-                        <p:NodeReference LastCategoryFullName="VL.Stride.Rendering.MeshDrawIndirect" LastDependency="Fuse.Core.vl">
+                      <Node Bounds="1096,1380,92,26" Id="CgoDLq13VWEPT3Zysd7q7m">
+                        <p:NodeReference LastCategoryFullName="Stride.API.Rendering.MeshDraw" LastDependency="VL.Stride.Runtime.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <CategoryReference Kind="AssemblyCategory" Name="MeshDrawIndirect" NeedsToBeDirectParent="true" />
+                          <CategoryReference Kind="ClassType" Name="MeshDraw" NeedsToBeDirectParent="true" />
                           <Choice Kind="OperationCallFlag" Name="SetIndexBuffer" />
                         </p:NodeReference>
                         <Pin Id="TL37NgNmSO4NwgwitS4wVe" Name="Input" Kind="StateInputPin" />
                         <Pin Id="GJ6YA3pGALbPYh2seZJnGJ" Name="Value" Kind="InputPin" />
                         <Pin Id="ChQSQqsmnWJOtxyUppgGZp" Name="Output" Kind="StateOutputPin" />
                       </Node>
-                      <Node Bounds="1171,1327,84,26" Id="Rjc6kwEMFqoPJNRTaSItKv">
+                      <Node Bounds="1194,1327,84,26" Id="Rjc6kwEMFqoPJNRTaSItKv">
                         <p:NodeReference LastCategoryFullName="Stride.Graphics.IndexBufferBinding" LastDependency="Stride.Graphics.dll">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="AssemblyCategory" Name="IndexBufferBinding" />
@@ -4679,7 +4681,7 @@
                         <Pin Id="Su5SiDPjUc2M18nbCxA59M" Name="Index Offset" Kind="InputPin" />
                         <Pin Id="SaEyI3xIJE8OF3hyA8xlQ6" Name="Output" Kind="StateOutputPin" />
                       </Node>
-                      <Node Bounds="1112,1290,64,26" Id="HlabPNxp2QqMYyWp4YH1Ci">
+                      <Node Bounds="1135,1290,64,26" Id="HlabPNxp2QqMYyWp4YH1Ci">
                         <p:NodeReference LastCategoryFullName="Fuse.Compute.Buffer.Indices" LastDependency="Fuse.Compute.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="Indices" />
@@ -4689,7 +4691,7 @@
                         <Pin Id="K9G5YTgeke8Nb6vbQ6GVOq" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="Ffj6jYdpMwpMneIqWqibHr" Name="Indices" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1139,1240,63,26" Id="I62z4sdi7K2MbWS03srhAh">
+                      <Node Bounds="1162,1240,63,26" Id="I62z4sdi7K2MbWS03srhAh">
                         <p:NodeReference LastCategoryFullName="Fuse.Compute.Buffer.Indices" LastDependency="Fuse.Compute.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="GetIs32Bit" />
@@ -4698,7 +4700,7 @@
                         <Pin Id="ViAFOXIH7xVO6KX5k0EUrA" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="GwbYKIBZ6S4OuSaIsZ091j" Name="Is 32Bit" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1170,1200,59,26" Id="V4s2G36WU7eLSebwXRLbmH">
+                      <Node Bounds="1193,1200,59,26" Id="V4s2G36WU7eLSebwXRLbmH">
                         <p:NodeReference LastCategoryFullName="Fuse.Compute.Buffer.Indices" LastDependency="Fuse.Compute.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="Indices" NeedsToBeDirectParent="true" />
@@ -4708,7 +4710,7 @@
                         <Pin Id="HVPKlfHZp4LMx5JfSZXyze" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="TDNPKnbFMm2Op2vuGZzMfs" Name="Count" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1102,1150,73,26" Id="UyxSGmhM057NYkOnUxZtBW">
+                      <Node Bounds="1125,1150,73,26" Id="UyxSGmhM057NYkOnUxZtBW">
                         <p:NodeReference LastCategoryFullName="Fuse.Compute.Buffer.IIndicesProvider" LastDependency="Fuse.Compute.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="InterfaceTypeFlag" Name="IIndicesProvider" NeedsToBeDirectParent="true" />
@@ -4718,7 +4720,7 @@
                         <Pin Id="KtuCiBksnJ3LwelOdufPJs" Name="State Output" Kind="StateOutputPin" />
                         <Pin Id="OspaPI9yNlgNewUuGBCabi" Name="Output" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="1113,1450,103,26" Id="OcHMGINL0WtLX8CD0P5jke">
+                      <Node Bounds="1136,1450,103,26" Id="OcHMGINL0WtLX8CD0P5jke">
                         <p:NodeReference LastCategoryFullName="Fuse.Compute.Buffer.Indices" LastDependency="Fuse.Compute.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="Indices" />
@@ -4740,15 +4742,15 @@
                       </Node>
                       <ControlPoint Id="OwisJAic61FQWjYXpFvp2o" Bounds="1266,1300" />
                     </Patch>
-                    <ControlPoint Id="MDrz1Ds2YvZNYPjVxrzoPF" Bounds="1086,1105" Alignment="Top" />
+                    <ControlPoint Id="MDrz1Ds2YvZNYPjVxrzoPF" Bounds="1098,1101" Alignment="Top" />
                     <ControlPoint Id="HSjxE6atmVcL3IdTNURm28" Bounds="1086,1559" Alignment="Bottom" />
-                    <ControlPoint Id="QumXlFUKwSeLS4stFtEtit" Bounds="1244,1105" Alignment="Top" />
+                    <ControlPoint Id="QumXlFUKwSeLS4stFtEtit" Bounds="1244,1101" Alignment="Top" />
                     <ControlPoint Id="CFrCrOLU8d8OZD8mflHuJY" Bounds="1267,1559" Alignment="Bottom" />
                   </Node>
-                  <Node Bounds="1084,1050,91,26" Id="GgnWuzelmDcPTKbrGvYEmN">
-                    <p:NodeReference LastCategoryFullName="VL.Stride.Rendering.MeshDrawIndirect" LastDependency="Fuse.Core.vl">
+                  <Node Bounds="1096,1050,91,26" Id="GgnWuzelmDcPTKbrGvYEmN">
+                    <p:NodeReference LastCategoryFullName="Stride.API.Rendering.MeshDraw" LastDependency="VL.Stride.Runtime.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="MeshDrawIndirect" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="MeshDraw" NeedsToBeDirectParent="true" />
                       <Choice Kind="OperationCallFlag" Name="SetPrimitiveType" />
                     </p:NodeReference>
                     <Pin Id="AXXFYkPSBkrMTdKbn4CUwF" Name="Input" Kind="StateInputPin" />
@@ -4780,10 +4782,10 @@
                     <Pin Id="MFl5Wv9mLu5MGa7BLTlcI9" Name="Indices" Kind="InputPin" />
                     <Pin Id="HZoDdk9QXy4PEO15bcLZbc" Name="Output" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="1084,1621,81,26" Id="VMtw8sOv0vqMkiwqVmrscy">
-                    <p:NodeReference LastCategoryFullName="VL.Stride.Rendering.MeshDrawIndirect" LastDependency="Fuse.Core.vl">
+                  <Node Bounds="1084,1621,81,19" Id="VMtw8sOv0vqMkiwqVmrscy">
+                    <p:NodeReference LastCategoryFullName="Stride.API.Rendering.MeshDraw" LastDependency="VL.Stride.Runtime.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="MeshDrawIndirect" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="MeshDraw" NeedsToBeDirectParent="true" />
                       <Choice Kind="OperationCallFlag" Name="SetDrawCount" />
                     </p:NodeReference>
                     <Pin Id="CiDxgj1Q63eLaryMdt5hyn" Name="Input" Kind="StateInputPin" />
@@ -4839,7 +4841,7 @@
                 <Pin Id="OjfkyjbxTf5QcgVRVflu3t" Name="Result" Kind="OutputPin" />
                 <Pin Id="QR7DpasAGgxPcG03EyA1zN" Name="Not Assigned" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1130,457,260,160" Id="HYBzkv7CiGPLurz7y6oaFH">
+              <Node Bounds="1130,457,261,160" Id="HYBzkv7CiGPLurz7y6oaFH">
                 <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
@@ -4870,7 +4872,7 @@
                     <Pin Id="IJ0sflULP1oMOrAvBoqzMm" Name="Input 2" Kind="InputPin" />
                     <Pin Id="HfDodl5pmwjQC6rGV8xgZx" Name="Output" Kind="OutputPin" />
                   </Node>
-                  <Pad Id="PLTnzHOVh6iLHfce6u7upw" Comment="" Bounds="1220,523,139,15" ShowValueBox="true" isIOBox="true" Value="VertexBuffer">
+                  <Pad Id="PLTnzHOVh6iLHfce6u7upw" Comment="" Bounds="1220,523,140,15" ShowValueBox="true" isIOBox="true" Value="VertexBuffer">
                     <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.Runtime.vl">
                       <Choice Kind="TypeFlag" Name="BufferFlags" />
                     </p:TypeAnnotation>
@@ -5032,7 +5034,6 @@
             <Link Id="EmHVFw6QatUPMBrnIbtQl7" Ids="QumXlFUKwSeLS4stFtEtit,CFrCrOLU8d8OZD8mflHuJY" IsFeedback="true" />
             <Link Id="QyYoMrVkRFALzanwPlkr5p" Ids="Rexny0J0ETuL2OJOr90p9t,QumXlFUKwSeLS4stFtEtit" />
             <Link Id="OCcIDJ4nLuWP5QuJiVQAjE" Ids="TDNPKnbFMm2Op2vuGZzMfs,OwisJAic61FQWjYXpFvp2o,CFrCrOLU8d8OZD8mflHuJY" />
-            <Link Id="OeBB3sXOOqgObso8M7uyWS" Ids="ChQSQqsmnWJOtxyUppgGZp,PmDCMUldnTlPGcEHm9XNUh" />
             <Link Id="QvBX61G9VEpOvtk6QVDLRg" Ids="HSjxE6atmVcL3IdTNURm28,CiDxgj1Q63eLaryMdt5hyn" />
             <Link Id="Scq4UllRP9bMK7FqSt5hrR" Ids="CFrCrOLU8d8OZD8mflHuJY,AxrmhxfYHkhNr8sp80dSK2" />
             <Link Id="PazGIiKzZIkPfH78fnRggT" Ids="L43z0BlfA8DMp8qb7gJ9WK,O23ZTw2KhavLfztArNcrCW" />
@@ -5049,6 +5050,7 @@
             <Link Id="NgXis028RY2PNfCPMdFdkP" Ids="FCv8CIxhlhwMbdsRjHANAa,RcaFrheX56LMCihjdieebB" IsHidden="true" />
             <Link Id="VQWZGEsrxjgPQoYhcBwWMg" Ids="RcaFrheX56LMCihjdieebB,MFl5Wv9mLu5MGa7BLTlcI9" />
             <Link Id="BfJNr4M7U9ENg6fzA5nZ78" Ids="RcaFrheX56LMCihjdieebB,R1aooNnuY8HO5fAiDbgsZB" />
+            <Link Id="SCz8sPqdF7ZQWwqrJug70E" Ids="EWGiDTvlNk5OCQHs0uRHK2,PmDCMUldnTlPGcEHm9XNUh" />
           </Patch>
         </Node>
         <!--
